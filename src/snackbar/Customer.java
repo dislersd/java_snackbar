@@ -22,19 +22,22 @@ public class Customer {
     return name;
   }
 
-  public double getCash() {
-    return cash;
+  public String getCash() {
+    return "Customer " + name + " cash on hand $" + cash;
   }
 
   public void setName(String name) {
     this.name = name;
   }
 
-  public void setCash(double cash) {
+  public String setCash(double cash) {
     this.cash = cash;
+    return name + " added $" + cash + " to wallet";
   }
 
-  public void buySnack(int cost) {
-    this.cash -= cost;
+  public String buySnack(Snack snack, int ammount) {
+    this.cash -= snack.getCost() * ammount;
+    snack.buy(ammount);
+    return name + " bought " + ammount + " " + snack.getName() + " for " + snack.getCost() * ammount;
   }
 }

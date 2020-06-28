@@ -28,8 +28,8 @@ public class Snack {
     return name;
   }
 
-  public int getQuantity() {
-    return quantity;
+  public String getQuantity() {
+    return "Quantity of snack " + id + " ("+ name + ") is " + quantity;
   }
 
   public double getCost() {
